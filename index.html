@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoção de cães</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<header>
+    <h1>Adote seu melhor amigo!</h1>
+</header>
+
+<body>
+
+    <h2>Cadastro</h2>
+    <form>
+        <div>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" />
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" />
+        </div>
+
+        <div>
+            <label for="telefone">Telefone:</label>
+            <input type="number" id="telefone" />
+        </div>
+
+        <div>
+            <label for="cpf">CPF:</label>
+            <input type="number" id="cpf" />
+        </div>
+
+        <div>
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" />
+        </div>
+
+        <div>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" />
+        </div>
+
+        <div>
+            <label for="tipo">Tipo de moradia:</label>
+            <input type="radio" id="casa" name="tipo" value="casa" />
+            <label for="casa" class="card">Casa</label>
+            <input type="radio" id="apartamento" name="tipo" value="apartamento" />
+            <label for="apartamento" class="card">Apartameno</label>
+        </div>
+
+        <div>
+            <label for="quintal">Possui quintal?:</label>
+            <input type="radio" id="sim" name="quintal" value="sim" />
+            <label for="sim" class="card">Sim</label>
+            <input type="radio" id="nao" name="quintal" value="nao" />
+            <label for="nao" class="card">Não</label>
+        </div>
+
+        <div>
+            <label for="antes">Já teve pet antes?:</label>
+            <input type="radio" id="sim" name="antes" value="sim" />
+            <label for="sim" class="card">Sim</label>
+            <input type="radio" id="nao" name="antes" value="nao" />
+            <label for="nao" class="card">Não</label>
+        </div>
+
+        <div>
+            <label for="horas_sozinho">Quantas horas o animal ficará sozinho por dia?:</label>
+            <input type="text" id="horas_sozinho" />
+        </div>
+
+        <div>
+            <label for="motivo">Motivo da adoção:</label>
+            <input type="textarea" id="motivo" />
+        </div>
+
+        <div>
+            <label for="termo">Aceita o termo de responsabilidade:</label>
+            <input type="checkbox" id="termo" />
+        </div>
+
+        <button onclick="validacao()">Cadastre-se</button>
+    </form>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
