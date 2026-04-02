@@ -65,4 +65,10 @@ function validacao() {
     alert("Esse CPF já está cadastrado");
     }
 
+    if (tipo && tipo.value === "apartamento" && quintal && quintal.value === "sim") {
+    alert("Erro: Quem mora em apartamento não pode ter quintal.");
+}
+
+
+
 }
