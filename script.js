@@ -9,6 +9,13 @@ function validacao() {
     let tipo = document.querySelector('input[name="tipo"]:checked');
     let quintal = document.querySelector('input[name="quintal"]:checked');
     let antes = document.querySelector('input[name="antes"]:checked');
+    let cpf = document.getElementById("cpf").value;
+    let cpf_duplicado = [
+        "12345678910",
+        "10987654321",
+        "11223344556",
+        "67788991010"
+    ]
 
     if (nome.length < 3) {
         alert("Nome deve ter no mínimo 3 caracteres.");
@@ -52,6 +59,10 @@ function validacao() {
 
     if (antes && antes.value === "nao") {
         alert("Já que você não teve nenhum animalzinho antes, pode haver um acompanhamento da ONG.")
+    }
+
+    if (cpf_duplicado.includes(cpf)) {
+    alert("Esse CPF já está cadastrado");
     }
 
 }
