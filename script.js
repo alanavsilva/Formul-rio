@@ -9,6 +9,7 @@ function validacao() {
     let tipo = document.querySelector('input[name="tipo"]:checked');
     let quintal = document.querySelector('input[name="quintal"]:checked');
     let antes = document.querySelector('input[name="antes"]:checked');
+    let financeiro = document.querySelector('input[name="financeiro"]:checked');
     let cpf = document.getElementById("cpf").value;
     let cpf_duplicado = [
         "12345678910",
@@ -45,7 +46,7 @@ function validacao() {
         alert("O motivo de adoção deve ter no mínimo 10 caracteres.");
     }
 
-     if ((motivo === "porque sim")||(motivo === "porque quero")||(motivo === "porque eu quero")||(motivo === "Porque sim")||(motivo === "Porque quero")||(motivo === "Porque eu quero")) {
+    if ((motivo === "porque sim") || (motivo === "porque quero") || (motivo === "porque eu quero") || (motivo === "Porque sim") || (motivo === "Porque quero") || (motivo === "Porque eu quero")) {
         alert("Resposta do motivo de adoção muito genérica, não será aceita.")
     }
 
@@ -62,15 +63,20 @@ function validacao() {
     }
 
     if (cpf_duplicado.includes(cpf)) {
-    alert("Esse CPF já está cadastrado");
+        alert("Esse CPF já está cadastrado");
     }
 
     if (tipo && tipo.value === "apartamento" && quintal && quintal.value === "sim") {
-    alert("Ocorreu um erro, quem mora em apartamento não pode ter quintal.");
-}
+        alert("Ocorreu um erro, quem mora em apartamento não pode ter quintal.");
+    }
 
-if (tipo && tipo.value === "casa" && quintal && quintal.value === "nao") {
-    alert("Aviso: por não possuir quintal, o uso de espaço externo pode ser limitado.");
-}
+    if (tipo && tipo.value === "casa" && quintal && quintal.value === "nao") {
+        alert("Aviso: por não possuir quintal, o uso de espaço externo pode ser limitado.");
+    }
+
+    if (financeiro && financeiro.value === "nao") {
+        alert("Você marcou que não tem financeiro para cuidar de um animalzinho, opte por um momento que tenha condições essa responsabilidade");
+        return;
+    }
 
 }
