@@ -60,6 +60,12 @@ function validacao() {
 
     if (horas_sozinho >= 8) {
         let porque = prompt("Atenção!! Não é recomendado deixar seu animalzinho tanto tempo sozinho, justifique o porquê de tanto tempo:");
+
+        if (porque.length === 0) {
+            alert("Justifique para realizar o cadastro");
+            valido = false;
+        }
+        valido = true
     }
 
     if (motivo.length < 10) {
@@ -70,6 +76,10 @@ function validacao() {
     if ((motivo === "porque sim") || (motivo === "porque quero") || (motivo === "porque eu quero") || (motivo === "Porque sim") || (motivo === "Porque quero") || (motivo === "Porque eu quero")) {
         alert("Resposta do motivo de adoção muito genérica, não será aceita.")
         valido = false;
+    }
+
+    if ((motivo === "porque decidi hoje") || (motivo === "porque hoje eu decidi que queria")) {
+        alert("Alerta de decisão impulsiva, se decidiu adotar hoje tenha cuidado")
     }
 
     if ((tipo && tipo.value === "casa") && (quintal && quintal.value === "sim")) {
