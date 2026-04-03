@@ -38,8 +38,18 @@ function validacao() {
         valido = false;
     }
 
+    if (cpf.length == 0) {
+        alert("Campo CPF obrigatório");
+        valido = false;
+    }
+
     if (idade < 18) {
         alert("Envio bloqueado! Você deve ser maior de idade para adotar.");
+        valido = false;
+    }
+
+    if (cidade.length == 0) {
+        alert("Campo cidade obrigatório");
         valido = false;
     }
 
