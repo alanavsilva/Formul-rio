@@ -22,7 +22,7 @@ function validacao() {
     ]
     let termo = document.getElementById("termo");
 
-    
+
     if (nome.length === 0) {
         alert("Informe seu nome");
         valido = false;
@@ -30,7 +30,7 @@ function validacao() {
         alert("Nome deve ter no mínimo 3 caracteres.");
         valido = false;
     }
-    
+
     if (email.length === 0) {
         alert("Informe seu email");
         valido = false;
@@ -67,26 +67,22 @@ function validacao() {
         alert("Campo cidade obrigatório");
         valido = false;
     }
-    
+
     if (!tipo) {
         alert("Selecione o tipo de moradia");
         valido = false;
-    } else if (tipo && tipo.value === "apartamento") {
-        let resposta2 = prompt("O apartamento permite animais?");
-    } else if ((tipo && tipo.value === "casa") && (quintal && quintal.value === "sim")) {
-        let resposta1 = prompt("O quintal é seguro?");
     } else if (tipo && tipo.value === "apartamento" && quintal && quintal.value === "sim") {
         alert("Ocorreu um erro, quem mora em apartamento não pode ter quintal.");
         valido = false;
     } else if (tipo && tipo.value === "casa" && quintal && quintal.value === "nao") {
         alert("Aviso: por não possuir quintal, o uso de espaço externo pode ser limitado.");
     }
-    
+
     if (!quintal) {
         alert("Selecione se tem quintal");
         valido = false;
     }
-    
+
     if (!antes) {
         alert("Selecione se já teve animais");
         valido = false;
@@ -101,7 +97,7 @@ function validacao() {
         alert("Você marcou que não tem financeiro para cuidar de um animalzinho, opte por um momento que tenha condições essa responsabilidade");
         valido = false;
     }
-    
+
     if (horas_sozinho.length === 0) {
         alert("Informe quantas horas sozinho o animal ficará");
         valido = false;
@@ -110,13 +106,13 @@ function validacao() {
         valido = false;
     } else if (horas_sozinho >= 8) {
         let porque = prompt("Atenção!! Não é recomendado deixar seu animalzinho tanto tempo sozinho, justifique o porquê de tanto tempo:");
-        
-        if (porque.length === 0) {
+
+        if (!porque || porque.length === 0) {
             alert("Justifique para realizar o cadastro");
             valido = false;
         }
     }
-    
+
     if (motivo.length === 0) {
         alert("Informe o motivo da adoção");
         valido = false;
@@ -129,12 +125,20 @@ function validacao() {
     } else if ((motivo === "porque decidi hoje") || (motivo === "porque hoje eu decidi que queria")) {
         alert("Alerta de decisão impulsiva, se decidiu adotar hoje tenha cuidado")
     }
-    
+
     if (!termo.checked) {
         alert("Você precisa aceitar o termo de responsabilidade");
         valido = false;
     }
-    
+
+    if (valido) {
+        if (tipo && tipo.value === "apartamento") {
+            let resposta1 = prompt("O apartamento permite animais?");
+        } else if ((tipo && tipo.value === "casa") && (quintal && quintal.value === "sim")) {
+            let resposta2 = prompt("O quintal é seguro?");
+        }
+    }
+
     if (!valido) {
         return;
     }
