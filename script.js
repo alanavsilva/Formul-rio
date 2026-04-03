@@ -50,7 +50,6 @@ function validacao() {
 
     if (horas_sozinho >= 8) {
         let porque = prompt("Atenção!! Não é recomendado deixar seu animalzinho tanto tempo sozinho, justifique o porquê de tanto tempo:");
-        valido = false;
     }
 
     if (motivo.length < 10) {
@@ -65,17 +64,14 @@ function validacao() {
 
     if ((tipo && tipo.value === "casa") && (quintal && quintal.value === "sim")) {
         let resposta1 = prompt("O quintal é seguro?");
-        valido = false;
     }
 
     if (tipo && tipo.value === "apartamento") {
         let resposta2 = prompt("O apartamento permite animais?");
-        valido = false;
     }
 
     if (antes && antes.value === "nao") {
         alert("Já que você não teve nenhum animalzinho antes, pode haver um acompanhamento da ONG.");
-        valido = false;
     }
 
     if (cpf_duplicado.includes(cpf)) {
@@ -90,7 +86,6 @@ function validacao() {
 
     if (tipo && tipo.value === "casa" && quintal && quintal.value === "nao") {
         alert("Aviso: por não possuir quintal, o uso de espaço externo pode ser limitado.");
-        valido = false;
     }
 
     if (financeiro && financeiro.value === "nao") {
@@ -102,18 +97,18 @@ function validacao() {
     }
 
     if (valido) {
-        alert("Nome: " + nome + "/n" +
-            "Email: " + email + "/n" +
-            "Telefone: " + telefone + "/n" +
-            "CPF" + cpf + "/n" +
-            "Idade: " + idade + "/n" +
-            "Cidade" + cidade + "/n" +
-            "Mora em: " + tipo.value + " / n" +
-            "Apresentou " + quintal.value + " ter quintal em casa/n" +
-            "Apresentou " + antes.value + " já ter tido um animal/n" +
-            "Apresentou " + financeiro.value + " ter condições financeiras de ter um animal/n" +
-            "Animal ficará sozinho: " + horas_sozinha + " horas/n" +
-            "Motivo da adoção: " + cidade + " /n");
+        alert("Cadastro\n Nome: " + nome + "\n" +
+            "Email: " + email + "\n" +
+            "Telefone: " + telefone + "\n" +
+            "CPF" + cpf + "\n" +
+            "Idade: " + idade + "\n" +
+            "Cidade" + cidade + "\n" +
+            "Mora em: " + tipo.value + " \n" +
+            "Apresentou " + quintal.value + " ter quintal em casa\n" +
+            "Apresentou " + antes.value + " já ter tido um animal\n" +
+            "Apresentou " + financeiro.value + " ter condições financeiras de ter um animal\n" +
+            "Animal ficará sozinho: " + horas_sozinho + " horas\n" +
+            "Motivo da adoção: " + motivo + " \n");
 
     }
 }
